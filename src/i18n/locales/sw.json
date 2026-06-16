@@ -1,0 +1,51 @@
+{
+  "app": {
+    "name": "Kiolezo cha Cryntra"
+  },
+  "language": {
+    "label": "Lugha",
+    "english": "Kiingereza",
+    "swahili": "Kiswahili"
+  },
+  "nav": {
+    "home": "Nyumbani",
+    "dashboard": "Dashibodi",
+    "login": "Ingia",
+    "register": "Jisajili",
+    "forgotPassword": "Sahau nenosiri"
+  },
+  "hero": {
+    "badge": "Mfano wa UI ya lugha nyingi",
+    "title": "Unda programu moja inayoongea lugha zaidi ya moja",
+    "description": "Mfano huu unaonyesha jinsi ya kuunganisha i18next kwenye programu yako ya Vite bila kuongeza paketi mpya."
+  },
+  "actions": {
+    "primary": "Chunguza dashibodi",
+    "secondary": "Nenda kwenye kurasa za akaunti"
+  },
+  "sections": {
+    "routeTitle": "Mfumo wa kurasa za mfano",
+    "routeDescription": "Kila ukurasa unaweza kutumia funguo zilezile za tafsiri, hivyo programu nzima inabaki sawa.",
+    "languageTitle": "Kibadilisha lugha",
+    "languageDescription": "Lugha iliyochaguliwa huhifadhiwa kiotomatiki kupitia detector ya kivinjari.",
+    "fileTitle": "Mahali pa kuweka vipengele",
+    "fileDescription": "Weka usanidi wa i18n sehemu moja, kisha uutumie kwenye ukurasa au component yoyote."
+  },
+  "dashboard": {
+    "title": "Dashibodi",
+    "intro": "Ukurasa wa dashibodi uliotafsiriwa.",
+    "statUsers": "Watumiaji hai",
+    "statRevenue": "Mapato",
+    "statProjects": "Miradi"
+  },
+  "auth": {
+    "loginTitle": "Ingia",
+    "registerTitle": "Fungua akaunti",
+    "forgotTitle": "Rejesha ufikiaji",
+    "resetTitle": "Chagua nenosiri jipya",
+    "email": "Anwani ya barua pepe",
+    "password": "Nenosiri",
+    "confirmPassword": "Thibitisha nenosiri",
+    "submit": "Endelea"
+  }
+}

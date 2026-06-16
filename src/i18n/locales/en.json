@@ -1,0 +1,51 @@
+{
+  "app": {
+    "name": "Cryntra Template"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "swahili": "Swahili"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "forgotPassword": "Forgot password"
+  },
+  "hero": {
+    "badge": "Multilingual UI example",
+    "title": "Build one app that speaks more than one language",
+    "description": "This example shows how to plug i18next into your existing Vite app without adding any new packages."
+  },
+  "actions": {
+    "primary": "Explore dashboard",
+    "secondary": "Go to auth pages"
+  },
+  "sections": {
+    "routeTitle": "Example route structure",
+    "routeDescription": "Each route can pull the same translation keys, so the whole app stays consistent.",
+    "languageTitle": "Language switcher",
+    "languageDescription": "The selected locale is remembered automatically through the browser detector.",
+    "fileTitle": "Where to put things",
+    "fileDescription": "Keep i18n setup in one place, then consume it from any route or component."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "intro": "A translated dashboard screen.",
+    "statUsers": "Active users",
+    "statRevenue": "Revenue",
+    "statProjects": "Projects"
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "registerTitle": "Create account",
+    "forgotTitle": "Reset access",
+    "resetTitle": "Choose a new password",
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "submit": "Continue"
+  }
+}
