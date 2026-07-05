@@ -18,16 +18,16 @@ export default function MainLayout(){
 
     useEffect(() => {
         const updateActiveHref = () => {
-          let currentHref = navItems[0]['link'] ?? ""
+          let currentHref = navItems[0]['link'] ?? "";
     
           for (const item of navItems) {
-            const sectionId = item.href.replace("#", "")
+            const sectionId = item['link'].replace("#", "")
             const section = document.getElementById(sectionId)
     
             if (!section) continue
     
             if (window.scrollY >= section.offsetTop - 150) {
-              currentHref = item.href
+              currentHref = item['link']
             }
           }
     
@@ -43,7 +43,7 @@ export default function MainLayout(){
       }, [navItems]);
 
     useEffect(() => {
-        setErrorPage(location.pathname === "/404" || location.pathname === "/500");
+        setErrorPage(location.pathname === "/error/404" || location.pathname === "/error/500");
     }, [location.pathname]);
 
     return (

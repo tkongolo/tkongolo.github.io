@@ -1,6 +1,6 @@
-import { MenuIcon, Sheet } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button.tsx";
-import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet.tsx";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet.tsx";
 
 function navLinkClassName(isActive: boolean) {
   return [
