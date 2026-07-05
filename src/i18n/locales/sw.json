@@ -1,51 +1,284 @@
 {
   "app": {
-    "name": "Kiolezo cha Cryntra"
+    "language_info": {
+      "label": "Language",
+      "languages": [
+        {
+          "title": "english",
+          "value": "English"
+        },
+        {
+          "title": "swahili",
+          "value": "Swahili"
+        }
+      ]
+    },
+    "buttons": {
+      "header_contact": "GET_IN_TOUCH",
+      "about_view_projects": "VIEW_PROJECTS",
+      "about_download_cv": "DOWNLOAD_CV",
+      "error_backhome": "RETURN_TO_HOME"
+    },
+    "header": {
+      "brand_title": "THOMAS_KONGOLO",
+      "navs": [
+        {
+          "title": "01_ABOUT",
+          "link": "#about"
+        },
+        {
+          "title": "02_SKILLS",
+          "link": "#skills"
+        },
+        {
+          "title": "03_EXPERIENCE",
+          "link": "#experience"
+        },
+        {
+          "title": "04_FOUNDATION",
+          "link": "#foundation"
+        },
+        {
+          "title": "05_CONTACT",
+          "link": "#contact"
+        }
+      ]
+    },
+    "footer": {
+      "social_media": [
+        {
+          "provider": "github",
+          "link": "https://github.com/tkongolo"
+        },
+        {
+          "provider": "linkedin",
+          "link": "https://www.linkedin.com/in/thomas-kongolo-b08832144/"
+        },
+        {
+          "provider": "stackoverflow",
+          "link": "https://stackoverflow.com/users/12345678/thomas-kongolo"
+        }
+      ]
+    }
   },
-  "language": {
-    "label": "Lugha",
-    "english": "Kiingereza",
-    "swahili": "Kiswahili"
+  "home": {
+    "seo": {
+      "title": "Thomas Kongolo - Senior Full Stack Developer | 10+ Years Experience",
+      "description": "Full Stack Developer with 10+ years experience in web, desktop, embedded systems, backend, and SQL/NoSQL databases. Complete solutions from hardware to UI."
+    },
+    "sections": [
+      {
+        "name": "about",
+        "content": {
+          "status":"SYSTEM_STATUS: ONLINE",
+          "head_line_one_lead": "Precision",
+          "head_line_one_accent": "Logic.",
+          "head_line_two_lead": "Fluid",
+          "head_line_two_accent": "Code.",
+          "description": "Electrical Engineer by training, Fullstack Architect by craft. I build high-integrity digital systems that bridge the gap between physical hardware precision and modern web scalability.",
+          "label_years": "Years_Experience",
+          "value_years": "10+"
+        } 
+      },
+      {
+        "name": "skills",
+        "content": {
+          "title_top": "SYSTEM_CAPABILITIES",
+          "title_bottom": "Tech Stack & Tools",
+          "cards": [
+            {
+              "card_title": "Frontend Engineering",
+              "content": {
+                "tabs": [
+                  {
+                    "label": "WEB",
+                    "description": "Reactive, high-performance web interfaces with meticulous attention to hardware-software synchronization.",
+                    "tags": ["REACT","REACT_ROUTER", "TYPESCRIPT", "TAILWIND", "DJANGO"]
+                  },
+                  {
+                    "label": "MOBILE",
+                    "description": "Native-feel performance for mission-critical mobile control systems and IoT monitoring.",
+                    "tags": ["FLUTTER","JETPACK_COMPOSE"]
+                  },
+                  {
+                    "label": "DESKTOP",
+                    "description": "Cross-platform desktop tools for industrial control and data visualization.",
+                    "tags": ["TAURI","SLINT","JAVAFX"]
+                  }
+                ],
+                "preferred_env": {
+                  "label": "PREFERRED_ENVIRONMENT",
+                  "value": "React + Tauri + JetPack Compose" 
+                }
+              }
+            },
+            {
+              "card_title": "Backend Engineering",
+              "content": {
+                "description": "Architecting resilient server-side logic and distributed systems with a focus on low-latency and reliability.",
+                "group_apis": {
+                  "label": "APIs & INTEGRATIONS",
+                  "values": ["REST", "GRAPHQL", "gRPC"]
+                },
+                "group_protocols": {
+                  "label": "CUSTOM PROTOCOLS",
+                  "values": ["MQTT","MODBUS","TCP","UDP","WEBRTC","RTSP"]
+                },
+                "group_languages": {
+                  "label": "PROGRAMMING_LANGUAGES",
+                  "values": ["GOLANG","NODEJS","DENOJS","DJANGO","SPRING_BOOT"]
+                },
+                "group_database": {
+                  "label": "DATABASES",
+                  "values": ["POSTGRESQL","MONGODB","REDIS","MYSQL","FIRESTORE"]
+                },
+                "preferred_env": {
+                  "label": "PREFERRED_LANGUAGE_DATABASE",
+                  "value": "Golang + PostgreSQL" 
+                }
+              }
+            },
+            {
+              "card_title": "Electrical Engineering",
+              "content": {
+                "description": "Deep-level hardware-software integration utilizing precision engineering principles for robust physical systems.",
+                "group_custom_calculation": {
+                  "label": "CUSTOM CALCULATIONS",
+                  "values": ["POWER_ANALYSIS", "ELECTROMAGNETIC_MODELLING", "THERMAL_MODELLING","SIMULATION"]
+                },
+                "group_design": {
+                  "label": "DESIGN & PROTOTYPING",
+                  "values": [
+                    {
+                      "value_title": "PCB DESIGN",
+                      "value_desc": "Altium / KiCad"
+                    },
+                    {
+                      "value_title": "FPGA / EMBEDDED",
+                      "value_desc": "Verilog / VHDL / C"
+                    }
+                  ]
+                },
+                "group_hardware": {
+                  "label": "HARDWARE INTERFACING",
+                  "values": ["SPI","I2C","UART","ADC/DAC"]
+                },
+                "group_database": {
+                  "label": "DATABASES",
+                  "values": ["POSTGRESQL","MONGODB","REDIS","MYSQL","FIRESTORE"]
+                },
+                "preferred_env": {
+                  "label": "PREFERRED_LANGUAGE_DATABASE",
+                  "value": "Golang + PostgreSQL" 
+                }
+              }
+            }
+          ],
+          "status":"SYSTEM_STATUS: ONLINE",
+          "head_line_one_lead": "Precision",
+          "head_line_one_accent": "Logic.",
+          "head_line_two_lead": "Fluid",
+          "head_line_two_accent": "Code.",
+          "description": "Electrical Engineer by training, Fullstack Architect by craft. I build high-integrity digital systems that bridge the gap between physical hardware precision and modern web scalability.",
+          "label_years": "Years_Experience",
+          "value_years": "10+"
+        } 
+      },
+      {
+        "name": "experience",
+        "content": {
+          "title_top": "PROFESSIONAL_TIMELINE",
+          "title_bottom": "Engineering History",
+          "experiences": [
+            {
+              "period": "2025 - PRESENT",
+              "role": "SENIOR_BACKEND_ENGINEER",
+              "company": "CraftMySkin",
+              "badge": "ACTIVE_ROLE",
+              "summary": ["Designed database and backend architecture","Developed backend application in Django REST API","Designed and developed custom machine learning algorithm for product selection based on data points such as ingredients and client data points such as skin concern and skin type","Designed custom education module that functioned within the backend application that provided education material based on various data points such as skin routine generated and user data points","Led software team in authentication system design"],
+              "tags": ["#BACKEND","#DJANGO","#PYTHON","#REST_API"]
+            },
+            {
+              "period": "2022 - 2024",
+              "role": "SENIOR_SOFTWARE_DEVELOPER",
+              "company": "ANSU",
+              "summary": ["Built front-end and back-end applications that constitued the e-commerce platform of ANSU","Led developer in application development,testing and deployment","Designed software architecture and database schema and developed the system for customers and sellers in the e-commerce platform","Fixed bugs in already existing software","Utilized e-commerce platforms like shopify into the company platform"],
+              "tags": ["#FRONTEND","#BACKEND","#REACT","#SHOPIFY","#DENOJS"]
+            },
+            {
+              "period": "2017 - 2021",
+              "role": "SYSTEM_DEVELOPER",
+              "company": "KAPS_LAB",
+              "summary": ["Built client applications for kiosk devices and desktop that communicated with databases or REST apis","Updated already existing application and improved performance through implementing best coding practices and modularizing code","Developed REST apis in django and nodejs","Designed database schema","Upgraded code and software for already developed applications","Fixed bugs and hardware issues"],
+              "tags": ["#FRONTEND","#BACKEND","#DESKTOP","#JAVAFX","#DJANGO","#MAINTENANCE"]
+            }
+          ]
+        } 
+      },
+      {
+        "name": "foundation",
+        "content": {
+          "cards": [
+            {
+              "name": "education",
+              "content": {
+                "logo": "university_hat",
+                "title": "Academic Foundation",
+                "education_range": "2012 - 2017",
+                "degree": "B.Sc. Electrical and Electronic Engineering",
+                "university": "Jomo Kenyatta University of Agriculture and Technology",
+                "specializations": ["Signal Processing","Power Electronics","Power Systems"]
+              }
+            },
+            {
+              "name": "background",
+              "content": {
+                "title_top": "THEORETICAL_GROUNDING",
+                "title_bottom": "Bridging Hardware and Software",
+                "description": "My engineering background provides a unique perspective on fullstack development. I treat software architectures like electrical circuits: prioritizing efficiency, minimizing resistance in UX, and ensuring every module is perfectly grounded.",
+                "info_array": [
+                  {
+                    "info_title": "Precision_Rate",
+                    "info_value": "98.5%"
+                  },
+                  {
+                    "info_title": "Deployments",
+                    "info_value": "350+"
+                  }
+                ]
+              }
+            }
+          ]
+        } 
+      },
+      {
+        "name": "content",
+        "content": {
+          "form_name_label": "Name",
+          "form_email_label": "Email",
+          "form_subject_label": "Subject",
+          "form_subject_options": ["Full-Stack Web/Mobile Development","Embedded Systems & IoT","Automation & Systems Integration","Freelance / Contract Opportunity","General Inquiry / Networking"]
+        } 
+      }
+    ]
+
   },
-  "nav": {
-    "home": "Nyumbani",
-    "dashboard": "Dashibodi",
-    "login": "Ingia",
-    "register": "Jisajili",
-    "forgotPassword": "Sahau nenosiri"
-  },
-  "hero": {
-    "badge": "Mfano wa UI ya lugha nyingi",
-    "title": "Unda programu moja inayoongea lugha zaidi ya moja",
-    "description": "Mfano huu unaonyesha jinsi ya kuunganisha i18next kwenye programu yako ya Vite bila kuongeza paketi mpya."
-  },
-  "actions": {
-    "primary": "Chunguza dashibodi",
-    "secondary": "Nenda kwenye kurasa za akaunti"
-  },
-  "sections": {
-    "routeTitle": "Mfumo wa kurasa za mfano",
-    "routeDescription": "Kila ukurasa unaweza kutumia funguo zilezile za tafsiri, hivyo programu nzima inabaki sawa.",
-    "languageTitle": "Kibadilisha lugha",
-    "languageDescription": "Lugha iliyochaguliwa huhifadhiwa kiotomatiki kupitia detector ya kivinjari.",
-    "fileTitle": "Mahali pa kuweka vipengele",
-    "fileDescription": "Weka usanidi wa i18n sehemu moja, kisha uutumie kwenye ukurasa au component yoyote."
-  },
-  "dashboard": {
-    "title": "Dashibodi",
-    "intro": "Ukurasa wa dashibodi uliotafsiriwa.",
-    "statUsers": "Watumiaji hai",
-    "statRevenue": "Mapato",
-    "statProjects": "Miradi"
-  },
-  "auth": {
-    "loginTitle": "Ingia",
-    "registerTitle": "Fungua akaunti",
-    "forgotTitle": "Rejesha ufikiaji",
-    "resetTitle": "Chagua nenosiri jipya",
-    "email": "Anwani ya barua pepe",
-    "password": "Nenosiri",
-    "confirmPassword": "Thibitisha nenosiri",
-    "submit": "Endelea"
+  "error": {
+    "pages": [
+      {
+        "type": "404",
+        "content": {
+          "title": "PAGE_NOT_FOUND",
+          "description": "The requested resource could not be located. The system path does not exist."
+        }
+      },
+      {
+        "type": "500",
+        "content": {
+          "title": "SYSTEM_ERROR",
+          "description": "An unexpected server error occurred. The system is diagnosing the fault."
+        }
+      }
+    ]
   }
 }
