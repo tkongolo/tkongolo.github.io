@@ -36,7 +36,7 @@ export default function Footer({brand,social_links}: { brand: string , social_li
                         social_links.map((link) => (
                             <a
                                 key={link['provider']}
-                                className="text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#ffba38] transition-colors duration-200 opacity-80 hover:opacity-100"
+                                className="text-lg text-slate-500 hover:text-[#ffba38] transition-colors duration-200 opacity-80 hover:opacity-100"
                                 href={link['link']}
                             >
                                 {getSocialIcon(link['provider'])}
