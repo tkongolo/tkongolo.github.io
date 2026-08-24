@@ -1,74 +1,37 @@
-import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-
-import { Button } from '@/components/ui/button'
-import { LanguageSwitcher } from '@/components/language-switcher'
+import { useTranslation } from 'react-i18next';
+import { SectionLayout } from "../components/layouts/section.layout.tsx";
+import { AboutLinkButtons } from "../data/buttons.ts";
+import { AboutImageInfoArray } from "../data/image-info.ts";
 
 export function HomeRoute() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
+  const sectionContents = t('home.sections', { returnObjects: true }) as any[];
+
+  const getSectionContent = (sectionName: string) => {
+    const sectionContent = sectionContents.find(section => section['name'] === sectionName);
+    return sectionContent ? sectionContent.content : null;
+  }
+
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 px-4 py-10 text-slate-900">
-      <Helmet>
-        <title>{t('app.name')}</title>
-        <meta
-          name="description"
-          content={t('hero.description')}
-        />
-      </Helmet>
+    <div>
+      <SectionLayout 
+          provider="about" 
+          sectionContent={getSectionContent("about")} 
+          linkButtons={AboutLinkButtons({ t })} 
+          images={AboutImageInfoArray} />
+      <SectionLayout 
+        provider="skills" 
+        sectionContent={getSectionContent("skills")} />
 
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10">
-        <header className="flex flex-col items-center gap-5 text-center">
-          <div className="rounded-full border border-slate-200 bg-white px-4 py-1 text-sm font-medium text-slate-600 shadow-sm">
-            {t('hero.badge')}
-          </div>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
-            {t('hero.title')}
-          </h1>
-          <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
-            {t('hero.description')}
-          </p>
-
-          <LanguageSwitcher />
-
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button asChild>
-              <Link to="/dashboard">{t('actions.primary')}</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/auth/login">{t('actions.secondary')}</Link>
-            </Button>
-          </div>
-        </header>
-
-        <section className="grid gap-4 md:grid-cols-3">
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm">
-            <h2 className="text-lg font-semibold text-slate-900">
-              {t('sections.routeTitle')}
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              {t('sections.routeDescription')}
-            </p>
-          </article>
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm">
-            <h2 className="text-lg font-semibold text-slate-900">
-              {t('sections.languageTitle')}
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              {t('sections.languageDescription')}
-            </p>
-          </article>
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm">
-            <h2 className="text-lg font-semibold text-slate-900">
-              {t('sections.fileTitle')}
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              {t('sections.fileDescription')}
-            </p>
-          </article>
-        </section>
-      </div>
-    </main>
+      {/* <SectionLayout 
+        provider="skills" 
+        sectionContent={getSectionContent("experience")} /> */}
+      {/* <HeroSection t={t} />
+      <SkillsSection t={t} />
+      <ExperienceSection t={t} />
+      <EducationSection t={t} />
+      <ContactSection t={t} /> */}
+    </div>
   )
 }

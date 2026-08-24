@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary-container: #001e22;
+  --color-surface-dim: #10131a;
+  --color-surface-container-low: #191c22;
+  --color-surface: #10131a;
+  --color-secondary: #afc9ea;
+  --color-primary: #00daf3;
+  --color-on-primary-fixed-variant: #004f58;
+  --color-background: #10131a;
+  --color-secondary-fixed-dim: #afc9ea;
+  --color-on-primary-fixed: #001f24;
+  --color-on-background: #e1e2eb;
+  --color-on-primary-container: #0090a1;
+  --color-tertiary-fixed: #ffdeac;
+  --color-on-tertiary-fixed-variant: #604100;
+  --color-surface-bright: #363940;
+  --color-on-error-container: #ffdad6;
+  --color-tertiary-container: #261700;
+  --color-on-secondary-fixed-variant: #2f4865;
+  --color-surface-container: #1d2026;
+  --color-primary-fixed-dim: #00daf3;
+  --color-on-surface-variant: #c4c6cc;
+  --color-tertiary: #ffba38;
+  --color-tertiary-fixed-dim: #ffba38;
+  --color-on-tertiary: #432c00;
+  --color-error: #ffb4ab;
+  --color-outline: #8e9196;
+  --color-on-secondary-fixed: #001d36;
+  --color-on-tertiary-fixed: #281900;
+  --color-surface-tint: #00daf3;
+  --color-on-tertiary-container: #ad7900;
+  --color-error-container: #93000a;
+  --color-on-secondary-container: #9eb7d8;
+  --color-surface-container-highest: #32353c;
+  --color-secondary-fixed: #d1e4ff;
+  --color-on-secondary: #17324d;
+  --color-inverse-primary: #006875;
+  --color-surface-variant: #32353c;
+  --color-on-primary: #00363d;
+  --color-surface-container-high: #272a31;
+  --color-inverse-surface: #e1e2eb;
+  --color-outline-variant: #44474c;
+  --color-on-surface: #e1e2eb;
+  --color-on-error: #690005;
+  --color-surface-container-lowest: #0b0e14;
+  --color-primary-fixed: #9cf0ff;
+  --color-secondary-container: #2f4865;
+  --color-inverse-on-surface: #2e3037;
+
+  /* Border Radius */
+  --radius: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Font Families */
+  --font-headline: "Space Grotesk";
+  --font-display: "Space Grotesk";
+  --font-body: "Manrope";
+  --font-label: "Space Grotesk";
+}
+
+/* Dark mode via class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+.circuit-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(0, 218, 243, 0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+.glitch-text {
+  text-shadow: 2px 0 #ffba38, -2px 0 #00daf3;
+}
