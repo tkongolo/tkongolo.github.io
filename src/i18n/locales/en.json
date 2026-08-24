@@ -23,22 +23,27 @@
       "brand_title": "THOMAS_KONGOLO",
       "navs": [
         {
+          "name": "about",
           "title": "01_ABOUT",
           "link": "#about"
         },
         {
+          "name": "skills",
           "title": "02_SKILLS",
           "link": "#skills"
         },
         {
+          "name": "experience",
           "title": "03_EXPERIENCE",
           "link": "#experience"
         },
         {
+          "name": "foundation",
           "title": "04_FOUNDATION",
           "link": "#foundation"
         },
         {
+          "name": "contact",
           "title": "05_CONTACT",
           "link": "#contact"
         }
@@ -252,7 +257,7 @@
         } 
       },
       {
-        "name": "content",
+        "name": "contact",
         "content": {
           "form_name_label": "Name",
           "form_email_label": "Email",

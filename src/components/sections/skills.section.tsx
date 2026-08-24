@@ -1,6 +1,34 @@
-// import { useState } from 'react'
-// import { CheckCircle } from 'lucide-react'
-// import { classes, accentTextColor, accentBorder, accentShadow, SectionIntro, TagChip, MaterialIcon } from './shared'
+import { useState } from 'react'
+import { CheckCircle } from 'lucide-react'
+import { classes, accentTextColor, accentBorder, accentShadow, SectionIntro, TagChip, MaterialIcon } from './shared'
+import type { SectionProps } from "../../models/models.ts";
+
+export default function SkillSection({
+  section,
+  linkButtonInfo = [],
+  imageInfo = [],
+}: SectionProps) {
+    const [activeTabId, setActiveTabId] = useState("web-stack");
+
+    const content = section || null;
+
+    return (
+        <div className="py-32 bg-[#191c22] scroll-mt-20">
+            {
+                content && (
+                    <div className="max-w-7xl mx-auto px-8">
+                        <SectionIntro
+                            className="mb-16"
+                            eyebrow={content['title_top']}
+                            title={content['title_bottom']}
+                        />
+                    </div>
+                )
+            }
+            
+        </div>
+    )
+}
 
 // export function SkillsSection({ t }: { t: (key: string) => string }) {
 //   const [activeTabId, setActiveTabId] = useState("web-stack")

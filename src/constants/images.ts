@@ -1,0 +1,3 @@
+export const IMAGES = {
+    profileImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVvhscwiCXSwiLv_aAjQT1JFTEOuKcNwd1suhzJK0ys6c0LK6F1rywRRvy3L1aFC6YzIja5f6-3Zkjc1tL-hRh7DxnjZlDYPEmH3nNWmtRdYM1vPKlvv11HXGUG5OGNvT0KDeBWDmIEYIzmYNfGZ6tDqhkvNAz4dOiH7u_NZE56grleeEP33bp8pcg4lZAcn3jWImYw8lNwxbB3b41FmqvW8YF67eb7BOUuYg8bOR0UYbuao589OaZqYpnzsoWz9Y8Zm8HpVUtzw'
+}
