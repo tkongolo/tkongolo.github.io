@@ -24,9 +24,9 @@ export function HomeRoute() {
         provider="skills" 
         sectionContent={getSectionContent("skills")} />
 
-      <SectionLayout 
+      {/* <SectionLayout 
         provider="skills" 
-        sectionContent={getSectionContent("experience")} />
+        sectionContent={getSectionContent("experience")} /> */}
       {/* <HeroSection t={t} />
       <SkillsSection t={t} />
       <ExperienceSection t={t} />
