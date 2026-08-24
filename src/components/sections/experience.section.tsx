@@ -1,34 +1,34 @@
-import type { SectionProps } from "../../models/models.ts";
-import { Badge } from "../ui/badge";
-import { SectionIntro } from "./shared";
+//import type { SectionProps } from "../../models/models.ts";
+//import { Badge } from "../ui/badge";
+//import { SectionIntro } from "./shared";
 
-export default function ExperienceSection({
-  section,
-  linkButtonInfo = [],
-  imageInfo = [],
-}: SectionProps) {
-  const content = section || null;
+// export default function ExperienceSection({
+//   section,
+//   linkButtonInfo = [],
+//   imageInfo = [],
+// }: SectionProps) {
+//   const content = section || null;
 
-  return (
-    <div className="py-32 bg-[#10131a] scroll-mt-20">
-      {
-        content && (
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-              <div className="max-w-2xl">
-                <SectionIntro
-                  accent="tertiary"
-                  eyebrow={content['']}
-                  title={content['']}
-                />
-              </div>
-            </div>
-          </div>
-        )
-      }
-    </div>
-  )
-}
+//   return (
+//     <div className="py-32 bg-[#10131a] scroll-mt-20">
+//       {
+//         content && (
+//           <div className="max-w-7xl mx-auto px-8">
+//             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+//               <div className="max-w-2xl">
+//                 <SectionIntro
+//                   accent="tertiary"
+//                   eyebrow={content['']}
+//                   title={content['']}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         )
+//       }
+//     </div>
+//   )
+// }
 
 // export function ExperienceSection({ t }: { t: (key: string) => string }) {
 //   const items = [

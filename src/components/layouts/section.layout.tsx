@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import AboutSection from "../sections/hero.section.tsx";
-import SkillSection from "../sections/skills.section.tsx";
-import ExperienceSection from "../sections/experience.section.tsx";
+//import SkillSection from "../sections/skills.section.tsx";
+//import ExperienceSection from "../sections/experience.section.tsx";
 
 export function SectionLayout({ provider,sectionContent,
     linkButtons,images }: 
@@ -24,10 +24,10 @@ export function SectionLayout({ provider,sectionContent,
         switch (provider) {
             case 'about':
                 return <AboutSection section={sectionContent} linkButtonInfo={linkButtons} imageInfo={images} />;
-            case 'skills':
-                return <SkillSection section={sectionContent} />
-            case 'experience':
-                return <ExperienceSection section={sectionContent} />    
+            // case 'skills':
+            //     return <SkillSection section={sectionContent} />
+            // case 'experience':
+            //     return <ExperienceSection section={sectionContent} />    
             
             default:
                 return null;
