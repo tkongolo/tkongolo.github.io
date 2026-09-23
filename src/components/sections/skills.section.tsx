@@ -1,34 +1,168 @@
-//import { useState } from 'react'
-//import { CheckCircle } from 'lucide-react'
-//import { classes, accentTextColor, accentBorder, accentShadow, SectionIntro, TagChip, MaterialIcon } from './shared'
-//import type { SectionProps } from "../../models/models.ts";
+import { useState } from 'react'
+import { CheckCircle } from 'lucide-react'
+import { classes, accentTextColor, accentBorder, accentShadow, SectionIntro, TagChip, MaterialIcon } from './shared'
+import type {
+    SectionProps,
+    SkillCard,
+    SkillGroup,
+    SkillTab,
+    SkillValue,
+    SkillsContent,
+} from "../../models/models.ts";
 
-// export default function SkillSection({
-//   section,
-//   linkButtonInfo = [],
-//   imageInfo = [],
-// }: SectionProps) {
-//     const [activeTabId, setActiveTabId] = useState("web-stack");
+export default function SkillSection({
+  section,
+  linkButtonInfo = [],
+  imageInfo = [],
+}: SectionProps) {
+    const [activeTabId, setActiveTabId] = useState("WEB");
 
-//     const content = section || null;
+    const content = (section || null) as SkillsContent | null;
+    void linkButtonInfo;
+    void imageInfo;
 
-//     return (
-//         <div className="py-32 bg-[#191c22] scroll-mt-20">
-//             {
-//                 content && (
-//                     <div className="max-w-7xl mx-auto px-8">
-//                         <SectionIntro
-//                             className="mb-16"
-//                             eyebrow={content['title_top']}
-//                             title={content['title_bottom']}
-//                         />
-//                     </div>
-//                 )
-//             }
+    return (
+        <div className="py-32 bg-[#191c22] scroll-mt-20">
+            {
+                content && (
+                    <div className="max-w-7xl mx-auto px-8">
+                        <SectionIntro
+                            className="mb-16"
+                            eyebrow={content['title_top']}
+                            title={content['title_bottom']}
+                        />
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            {content.cards?.map((card: SkillCard, cardIndex: number) => {
+                                const accent = cardIndex === 1 ? "tertiary" : "primary";
+                                const icon = cardIndex === 0 ? "terminal" : cardIndex === 1 ? "dns" : "memory";
+                                const isTabbed = Boolean(card.content.tabs);
+                                const tabs = card.content.tabs ?? [];
+                                const groups = Object.keys(card.content)
+                                    .filter((key) => key !== "description" && key !== "preferred_env")
+                                    .map((key) => card.content[key] as SkillGroup);
+
+                                return (
+                                    <div
+                                        key={card.card_title}
+                                        className={classes(
+                                            "bg-[#10131a] p-8 rounded-2xl border-l-4 shadow-lg transition-all",
+                                            accentBorder(accent),
+                                            accentShadow(accent),
+                                        )}
+                                    >
+                                        <div className="flex justify-between items-start mb-8">
+                                            <MaterialIcon className={classes(accentTextColor(accent), "size-9")} icon={icon} />
+                                            <span className="text-[10px] text-[#c4c6cc] tracking-widest uppercase bg-[#272a31] px-3 py-1 rounded">
+                                                {card.card_title}
+                                            </span>
+                                        </div>
+                                        <h4 className={classes("text-2xl font-bold", isTabbed ? "mb-6" : "mb-4")}>
+                                            {card.card_title}
+                                        </h4>
+
+                                        {isTabbed ? (
+                                            <>
+                                                <div className="mb-8">
+                                                    <div className="flex gap-4 border-b border-[#44474c]/30 mb-6 overflow-x-auto">
+                                                        {tabs.map((tab: SkillTab) => {
+                                                            const isActive = tab.label === activeTabId;
+                                                            return (
+                                                                <button
+                                                                    key={tab.label}
+                                                                    className={classes(
+                                                                        "text-[10px] tracking-widest uppercase pb-2 transition-all whitespace-nowrap border-b-2",
+                                                                        isActive
+                                                                            ? classes(accentTextColor(accent), accentBorder(accent))
+                                                                            : "border-transparent hover:text-[#00daf3] text-[#c4c6cc]",
+                                                                    )}
+                                                                    onClick={() => setActiveTabId(tab.label)}
+                                                                    type="button"
+                                                                >
+                                                                    {tab.label}
+                                                                </button>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                    {tabs.map((tab: SkillTab) =>
+                                                        tab.label === activeTabId ? (
+                                                            <div key={tab.label}>
+                                                                <p className="text-[#c4c6cc] text-xs mb-6 leading-relaxed">
+                                                                    {tab.description}
+                                                                </p>
+                                                                <div className="flex flex-wrap gap-2">
+                                                                    {tab.tags.map((tag: string) => (
+                                                                        <TagChip key={tag} accent={accent} label={tag} />
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        ) : null,
+                                                    )}
+                                                </div>
+                                                <div className="mt-8 pt-6 border-t border-[#44474c]/20">
+                                                    <p className={classes("text-[10px] tracking-widest uppercase mb-3", accentTextColor(accent))}>
+                                                        {card.content.preferred_env?.label}
+                                                    </p>
+                                                    <div className="flex items-center gap-2 text-[#e1e2eb]">
+                                                        <CheckCircle className={classes(accentTextColor(accent), "size-4")} />
+                                                        <span className="font-bold text-xs">{card.content.preferred_env?.value}</span>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <p className="text-[#c4c6cc] text-xs mb-8 leading-relaxed">
+                                                    {card.content.description}
+                                                </p>
+                                                <div className="space-y-6">
+                                                    {groups.map((group) => (
+                                                        <div key={group.label}>
+                                                            <p className={classes("text-[10px] tracking-widest uppercase mb-3", accentTextColor(accent))}>
+                                                                {group.label}
+                                                            </p>
+                                                            <div className="flex flex-wrap gap-2">
+                                                                {group.values.map((value: SkillValue) => {
+                                                                    const label = typeof value === "string" ? value : value.value_title;
+                                                                    return (
+                                                                        <div key={label}>
+                                                                            <TagChip
+                                                                                accent={accent}
+                                                                                label={label}
+                                                                                variant={typeof value === "string" ? "line" : "solid"}
+                                                                            />
+                                                                            {typeof value !== "string" && value.value_desc && (
+                                                                                <p className="text-[9px] text-[#c4c6cc] mt-1">{value.value_desc}</p>
+                                                                            )}
+                                                                        </div>
+                                                                    );
+                                                                })}
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                {card.content.preferred_env && (
+                                                    <div className="mt-8 pt-6 border-t border-[#44474c]/20">
+                                                        <p className={classes("text-[10px] tracking-widest uppercase mb-3", accentTextColor(accent))}>
+                                                            {card.content.preferred_env.label}
+                                                        </p>
+                                                        <div className="flex items-center gap-2 text-[#e1e2eb]">
+                                                            <CheckCircle className={classes(accentTextColor(accent), "size-4")} />
+                                                            <span className="font-bold text-xs">{card.content.preferred_env.value}</span>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )
+            }
             
-//         </div>
-//     )
-// }
+        </div>
+    )
+}
 
 // export function SkillsSection({ t }: { t: (key: string) => string }) {
 //   const [activeTabId, setActiveTabId] = useState("web-stack")

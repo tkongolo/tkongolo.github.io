@@ -257,6 +257,7 @@
           "form_name_label": "Name",
           "form_email_label": "Email",
           "form_subject_label": "Subject",
+          "form_message_label": "Message",
           "form_subject_options": ["Full-Stack Web/Mobile Development","Embedded Systems & IoT","Automation & Systems Integration","Freelance / Contract Opportunity","General Inquiry / Networking"]
         } 
       }
