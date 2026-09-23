@@ -1,4 +1,4 @@
-import type { SectionProps } from "../../models/models.ts";
+import type { ExperienceContent, ExperienceItem, SectionProps } from "../../models/models.ts";
 import { Badge } from "../ui/badge";
 import { SectionIntro } from "./shared";
 
@@ -7,7 +7,9 @@ export default function ExperienceSection({
   linkButtonInfo = [],
   imageInfo = [],
 }: SectionProps) {
-  const content = section || null;
+  const content = (section || null) as ExperienceContent | null;
+  void linkButtonInfo;
+  void imageInfo;
 
   return (
     <div className="py-32 bg-[#10131a] scroll-mt-20">
@@ -18,10 +20,58 @@ export default function ExperienceSection({
               <div className="max-w-2xl">
                 <SectionIntro
                   accent="tertiary"
-                  eyebrow={content['']}
-                  title={content['']}
+                  eyebrow={content.title_top}
+                  title={content.title_bottom}
                 />
               </div>
+            </div>
+            <div className="space-y-12">
+              {content.experiences?.map((item: ExperienceItem) => (
+                <div
+                  key={`${item.period}-${item.company}`}
+                  className="group relative grid md:grid-cols-12 gap-8 py-8 px-8 rounded-xl hover:bg-[#191c22] transition-colors duration-300"
+                >
+                  <div className="md:col-span-3">
+                    <span
+                      className={
+                        item.badge
+                          ? "text-[#00daf3] font-bold text-xl"
+                          : "text-[#c4c6cc] font-bold text-xl"
+                      }
+                    >
+                      {item.period}
+                    </span>
+                    <div className="mt-2 text-[#c4c6cc] text-xs tracking-widest uppercase">
+                      {item.role}
+                    </div>
+                  </div>
+                  <div className="md:col-span-9">
+                    <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-3">
+                      <h4 className="text-2xl font-bold text-[#e1e2eb]">
+                        {item.company}
+                      </h4>
+                      {item.badge && (
+                        <Badge className="bg-[#00daf3]/10 text-[#00daf3] text-[10px] px-3 py-1 rounded-[999px] tracking-widest font-bold border-0">
+                          {item.badge}
+                        </Badge>
+                      )}
+                    </div>
+                    <p className="text-[#c4c6cc] leading-relaxed max-w-3xl mb-6">
+                      {item.summary?.join(" ")}
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {item.tags?.map((tag: string) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] text-[#c4c6cc] tracking-widest"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )
