@@ -18,6 +18,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    env:
+      VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+      VITE_BUCKET_PORTFOLIO: ${{ secrets.VITE_BUCKET_PORTFOLIO }}
+      VITE_SUPABASE_SIGNED_URL_EXPIRES_IN: ${{ secrets.VITE_SUPABASE_SIGNED_URL_EXPIRES_IN }}
 
     steps:
       - name: Check out repository

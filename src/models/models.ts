@@ -101,3 +101,14 @@ export type ContactContent = {
   form_message_label: string;
   form_subject_options: string[];
 };
+
+export interface LanguageInfoModel {
+    title: string;
+    val: string;
+    fileName: string;
+};
+
+export interface SocMediaInfoModel {
+    provider: string;
+    link: string;
+};
