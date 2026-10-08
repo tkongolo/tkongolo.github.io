@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+## Supabase Storage
+
+Copy `.env.example` to `.env.local` and replace the placeholder values with the
+Supabase project URL, publishable key, storage bucket, and signed URL lifetime.
+The publishable key is intended for browser use; never put a Supabase secret or
+service-role key in a `VITE_` variable.
+
+Private Storage images are loaded with signed URLs. Set
+`VITE_SUPABASE_SIGNED_URL_EXPIRES_IN` to the URL lifetime in seconds.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
