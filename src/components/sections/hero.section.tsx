@@ -12,7 +12,7 @@ export default function AboutSection({
   // Safe array searching with optional chaining
   const viewProject = linkButtonInfo?.find(button => button?.name === 'viewProjectButton');
   const downloadCV = linkButtonInfo?.find(button => button?.name === 'downloadCVButton');
-  const portraitImage = imageInfo?.find(image => image?.name === 'portraitImage');
+  const portraitImage = imageInfo?.find(image => image?.name === 'profileImage');
 
   return (
     <div className="relative min-h-screen flex items-center pt-20 overflow-hidden circuit-bg">

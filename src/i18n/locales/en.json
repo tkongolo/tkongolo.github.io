@@ -1,18 +1,5 @@
 {
   "app": {
-    "language_info": {
-      "label": "Language",
-      "languages": [
-        {
-          "title": "english",
-          "value": "English"
-        },
-        {
-          "title": "swahili",
-          "value": "Swahili"
-        }
-      ]
-    },
     "buttons": {
       "header_contact": "GET_IN_TOUCH",
       "about_view_projects": "VIEW_PROJECTS",
@@ -49,22 +36,7 @@
         }
       ]
     },
-    "footer": {
-      "social_media": [
-        {
-          "provider": "github",
-          "link": "https://github.com/tkongolo"
-        },
-        {
-          "provider": "linkedin",
-          "link": "https://www.linkedin.com/in/thomas-kongolo-b08832144/"
-        },
-        {
-          "provider": "stackoverflow",
-          "link": "https://stackoverflow.com/users/12345678/thomas-kongolo"
-        }
-      ]
-    }
+    "footer": {}
   },
   "home": {
     "seo": {
@@ -101,6 +73,11 @@
                     "tags": ["REACT","REACT_ROUTER", "TYPESCRIPT", "TAILWIND", "DJANGO"]
                   },
                   {
+                    "label": "WEB3_DAPPS",
+                    "description": "Wallet-connected decentralized applications with secure transaction flows, on-chain data, and responsive user experiences.",
+                    "tags": ["NEXT_JS", "WAGMI", "VIEM", "RAINBOWKIT", "WALLETCONNECT", "ETHERS_JS", "WEB3_JS", "TON_BLOCKCHAIN", "TON_CONNECT", "TON_DAPPS"]
+                  },
+                  {
                     "label": "MOBILE",
                     "description": "Native-feel performance for mission-critical mobile control systems and IoT monitoring.",
                     "tags": ["FLUTTER","JETPACK_COMPOSE"]
@@ -123,23 +100,27 @@
                 "description": "Architecting resilient server-side logic and distributed systems with a focus on low-latency and reliability.",
                 "group_apis": {
                   "label": "APIs & INTEGRATIONS",
-                  "values": ["REST", "GRAPHQL", "gRPC"]
+                  "values": ["REST", "GRAPHQL", "gRPC", "JSON_RPC", "EVM_RPC", "INDEXING_APIS"]
                 },
                 "group_protocols": {
                   "label": "CUSTOM PROTOCOLS",
-                  "values": ["MQTT","MODBUS","TCP","UDP","WEBRTC","RTSP"]
+                  "values": ["MQTT","MODBUS","TCP","UDP","WEBRTC","RTSP", "EVM", "TON_BLOCKCHAIN", "TON_CONNECT", "ERC-20", "ERC-721", "ERC-1155"]
                 },
                 "group_languages": {
                   "label": "PROGRAMMING_LANGUAGES",
-                  "values": ["GOLANG","NODEJS","DENOJS","DJANGO","SPRING_BOOT"]
+                  "values": ["GOLANG","NODEJS","DENOJS","DJANGO","SPRING_BOOT", "SOLIDITY", "RUST"]
+                },
+                "group_web3_frameworks": {
+                  "label": "WEB3_FRAMEWORKS",
+                  "values": ["HARDHAT", "FOUNDRY", "OPENZEPPELIN", "THE_GRAPH", "CHAINLINK"]
                 },
                 "group_database": {
                   "label": "DATABASES",
-                  "values": ["POSTGRESQL","MONGODB","REDIS","MYSQL","FIRESTORE"]
+                  "values": ["POSTGRESQL","MONGODB","REDIS","MYSQL","FIRESTORE", "IPFS", "ARWEAVE"]
                 },
                 "preferred_env": {
                   "label": "PREFERRED_LANGUAGE_DATABASE",
-                  "value": "Golang + PostgreSQL" 
+                  "value": "Golang + PostgreSQL + Solidity"
                 }
               }
             },
@@ -167,14 +148,6 @@
                 "group_hardware": {
                   "label": "HARDWARE INTERFACING",
                   "values": ["SPI","I2C","UART","ADC/DAC"]
-                },
-                "group_database": {
-                  "label": "DATABASES",
-                  "values": ["POSTGRESQL","MONGODB","REDIS","MYSQL","FIRESTORE"]
-                },
-                "preferred_env": {
-                  "label": "PREFERRED_LANGUAGE_DATABASE",
-                  "value": "Golang + PostgreSQL" 
                 }
               }
             }

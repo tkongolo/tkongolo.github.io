@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import Header from "../header.components.tsx";
 import Footer from "../footer.components.tsx";
+import { getSocialMedia } from "../../data/social-media.ts";
 
 export default function MainLayout(){
     const { t } = useTranslation();
@@ -10,7 +11,7 @@ export default function MainLayout(){
     const navItems = t('app.header.navs', { returnObjects: true }) as any[];
     const ctaLabel = t('app.buttons.header_contact') as string;
     const ctaHref = navItems.find(item => item['title'] === '05_CONTACT')?.['link'] ?? "";
-    const socials = t('app.footer.social_media', { returnObjects: true }) as any[];
+    const socials = getSocialMedia();
 
     const [activeHref, setActiveHref] = useState(navItems[0]['link'] ?? "");
     const [errorPage, setErrorPage] = useState(false);

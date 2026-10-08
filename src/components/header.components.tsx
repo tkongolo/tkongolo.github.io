@@ -1,4 +1,5 @@
 import { MenuIcon } from "lucide-react";
+import type { MouseEvent } from "react";
 import { Button } from "./ui/button.tsx";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet.tsx";
 
@@ -9,6 +10,25 @@ function navLinkClassName(isActive: boolean) {
       ? "text-[#00daf3] font-bold border-b-2 border-[#00daf3] pb-1"
       : "text-[#c4c6cc] font-medium hover:text-[#00daf3] hover:bg-slate-800/50",
   ].join(" ");
+}
+
+function scrollToSection(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    if (!href.startsWith("#")) return;
+
+    const section = document.getElementById(href.slice(1));
+    if (!section) return;
+
+    event.preventDefault();
+
+    const headerOffset = 96;
+    const targetPosition = section.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+        top: Math.max(targetPosition, 0),
+        behavior: "smooth",
+    });
+
+    window.history.pushState(null, "", href);
 }
 
 
@@ -35,6 +55,7 @@ export default function Header(
                                         key={item['link']}
                                         className={navLinkClassName(item['link'] === activeHref)}
                                         href={item['link']}
+                                        onClick={(event) => scrollToSection(event, item['link'])}
                                         >
                                             {item['title']}
                                         </a>
@@ -64,6 +85,7 @@ export default function Header(
                                                     key={item['link']}
                                                     className={navLinkClassName(item['link'] === activeHref)}
                                                     href={item['link']}
+                                                    onClick={(event) => scrollToSection(event, item['link'])}
                                                 >
                                                     {item['title']}
                                                 </a>
